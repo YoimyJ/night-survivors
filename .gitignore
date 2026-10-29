@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+build/
+build_log.txt
+smoke_*.png
+.pytest_cache/

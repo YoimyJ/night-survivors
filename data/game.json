@@ -1,0 +1,197 @@
+{
+  "window": { "width": 390, "height": 700 },
+  "floor_tile_px": 64,
+  "floor_picture": "floor.png",
+
+  "hero": {
+    "speed": 120.0,
+    "max_hp": 100.0,
+    "hit_radius": 12.0,
+    "magnet_radius": 60.0,
+    "follow_min_px": 12.0,
+    "touch_cooldown": 0.5,
+    "picture": "hero.png",
+    "picture_px": 36
+  },
+
+  "weapons": {
+    "spark_wand": {
+      "name": "Spark Wand",
+      "short": "Spark",
+      "text": "Shoots a spark at the nearest enemy",
+      "levels": 5,
+      "count": 1,
+      "damage": 20.0,
+      "interval": 0.8,
+      "speed": 400.0,
+      "radius": 4.0,
+      "life": 0.9,
+      "damage_per_level": 3.0,
+      "interval_minus_per_level": 0.08,
+      "extra_spark_levels": [3, 5],
+      "fan_degrees": 15.0
+    },
+    "spin_blades": {
+      "name": "Spin Blades",
+      "short": "Blades",
+      "text": "Blades spin around you",
+      "levels": 5,
+      "count": 2,
+      "damage": 8.0,
+      "orbit_radius": 60.0,
+      "turn_seconds": 1.5,
+      "hit_cooldown": 0.5,
+      "blade_radius": 12.0,
+      "damage_per_level": 3.0,
+      "extra_blade_levels": [2, 4],
+      "picture": "sword.png",
+      "picture_px": 24
+    },
+    "holy_ring": {
+      "name": "Holy Ring",
+      "short": "Ring",
+      "text": "Hurts everything close to you",
+      "levels": 5,
+      "damage": 5.0,
+      "radius": 50.0,
+      "interval": 0.5,
+      "damage_per_level": 2.0,
+      "radius_per_level": 10.0
+    }
+  },
+
+  "passives": {
+    "swift_boots": {
+      "name": "Swift Boots",
+      "short": "Boots",
+      "text": "+10% walking speed",
+      "levels": 5,
+      "speed_percent": 10.0
+    },
+    "big_heart": {
+      "name": "Big Heart",
+      "short": "Heart",
+      "text": "+20 max HP and heal 20",
+      "levels": 5,
+      "max_hp": 20.0,
+      "heal": 20.0
+    },
+    "magnet": {
+      "name": "Magnet",
+      "short": "Magnet",
+      "text": "+30 px gem magnet",
+      "levels": 5,
+      "radius": 30.0
+    }
+  },
+
+  "level_up": {
+    "first_xp": 5,
+    "xp_per_level": 3,
+    "cards": 3,
+    "max_weapons": 3,
+    "heal_hp": 30.0,
+    "gem_speed": 300.0,
+    "gem_picture_px": 22,
+    "gem_pictures": { "1": "gem_blue.png", "2": "gem_pink.png" }
+  },
+
+  "enemies": {
+    "bat": {
+      "hp": 8.0,
+      "speed": 100.0,
+      "damage": 5.0,
+      "xp": 1,
+      "radius": 10.0,
+      "picture": "bat.png",
+      "picture_px": 28
+    },
+    "slime": {
+      "hp": 30.0,
+      "speed": 55.0,
+      "damage": 8.0,
+      "xp": 2,
+      "radius": 12.0,
+      "picture": "slime.png",
+      "picture_px": 32
+    },
+    "ghost": {
+      "hp": 15.0,
+      "speed": 135.0,
+      "damage": 6.0,
+      "xp": 2,
+      "radius": 11.0,
+      "picture": "ghost.png",
+      "picture_px": 30
+    },
+    "demon": {
+      "hp": 800.0,
+      "speed": 85.0,
+      "damage": 20.0,
+      "xp": 0,
+      "radius": 24.0,
+      "boss": true,
+      "picture": "demon.png",
+      "picture_px": 56
+    }
+  },
+
+  "spawning": {
+    "interval": 1.0,
+    "max_per_second": 8,
+    "max_alive": 120,
+    "circle_radius": 380.0,
+    "despawn_radius": 700.0,
+    "boss_leash_radius": 600.0
+  },
+
+  "spawn_rows": [
+    { "from": 0.0, "types": ["bat"], "min_alive": 12 },
+    { "from": 15.0, "types": ["bat"], "min_alive": 20 },
+    { "from": 30.0, "types": ["bat", "slime"], "min_alive": 28 },
+    { "from": 45.0, "types": ["slime", "ghost"], "min_alive": 36 },
+    { "from": 60.0, "types": ["bat", "ghost"], "min_alive": 45 },
+    { "from": 75.0, "types": ["bat", "slime", "ghost"], "min_alive": 55 },
+    { "from": 90.0, "types": ["bat", "slime"], "min_alive": 55, "boss": "demon" },
+    { "from": 105.0, "types": ["bat"], "min_alive": 75 }
+  ],
+
+  "victory_time": 120.0,
+
+  "sounds": {
+    "volume": 0.5,
+    "hit_gap": 0.08,
+    "files": {
+      "hit": "hit.wav",
+      "gem": "gem.wav",
+      "levelup": "levelup.wav",
+      "hurt": "hurt.wav",
+      "end": "end.wav"
+    }
+  },
+
+  "feel": {
+    "number_seconds": 0.6,
+    "number_rise_px": 26.0,
+    "number_max": 40,
+    "flash_seconds": 0.25,
+    "flash_px": 26.0,
+    "shake_seconds": 0.2,
+    "shake_px": 5.0
+  },
+
+  "colors": {
+    "hp_back": [60, 30, 34],
+    "hp": [222, 74, 74],
+    "xp_back": [26, 34, 60],
+    "xp": [86, 148, 255],
+    "spark": [140, 232, 255],
+    "ring": [255, 226, 130],
+    "card": [38, 40, 58],
+    "card_edge": [120, 126, 168],
+    "text": [236, 236, 240],
+    "overlay": [16, 16, 26],
+    "number": [255, 244, 214],
+    "flash": [255, 236, 170]
+  }
+}
